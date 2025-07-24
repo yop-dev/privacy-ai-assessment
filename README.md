@@ -2,15 +2,6 @@
 
 An enterprise-grade compliance platform designed to help organizations achieve and maintain compliance with the Philippine Data Privacy Act of 2012 (Republic Act No. 10173). Our advanced platform combines intelligent assessment tools, AI-powered legal guidance, and comprehensive compliance reporting to streamline your organization's data privacy compliance journey.
 
-## Screenshots
-
-![Homepage](./screenshots/homepage.png)
-![Assessment](./screenshots/assessment.png)
-![Results](./screenshots/results.png)
-![AI Assistant](./screenshots/ai-assistant.png)
-
-*Screenshots will be added upon deployment*
-
 ## Tech Stack
 
 - **Frontend**: Next.js 14 with App Router, React 18, TypeScript
