@@ -243,7 +243,7 @@ export default function ChatBot({ isOpen, onClose }: ChatBotProps) {
               />
             </div>
             <button
-              onClick={sendMessage}
+              onClick={() => sendMessage()}
               disabled={!inputMessage.trim() || isLoading}
               className="p-3 bg-primary-600 hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed text-white rounded-xl transition-colors flex-shrink-0"
             >
