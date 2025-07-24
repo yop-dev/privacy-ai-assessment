@@ -29,6 +29,9 @@ export default function HomePage() {
               <Link href="/check" className="btn-primary-large">
                 Start Free Assessment
               </Link>
+              <Link href="/resources" className="btn-secondary">
+                Browse Resources
+              </Link>
               <a 
                 href="https://privacy.gov.ph/data-privacy-act" 
                 target="_blank" 

@@ -56,6 +56,9 @@ export default function RootLayout({
                 <Link href="/check" className="text-gray-600 hover:text-primary-600 font-medium transition-colors">
                   Assessment
                 </Link>
+                <Link href="/resources" className="text-gray-600 hover:text-primary-600 font-medium transition-colors">
+                  Resources
+                </Link>
                 <a 
                   href="https://privacy.gov.ph/data-privacy-act" 
                   target="_blank" 
