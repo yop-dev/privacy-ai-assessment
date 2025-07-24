@@ -24,6 +24,11 @@ An enterprise-grade compliance platform designed to help organizations achieve a
 - **24/7 Legal Chatbot**: Instant answers about Philippine data privacy law
 - **Context-Aware Responses**: Maintains conversation history for better assistance
 - **Specialized Knowledge**: Trained specifically on RA 10173 requirements and compliance
+
+### Visual Resources
+- **Official Structure Diagram**: Interactive display of the Data Privacy Act organizational framework
+- **Government-Sourced Content**: Authentic materials from the National Privacy Commission of the Philippines
+- **Educational Visuals**: Clear presentation of RA 10173 structure to enhance understanding
 - **Professional Interface**: Legal-themed chat interface with proper disclaimers
 - **Smart Feedback Generation**: AI-powered personalized recommendations for non-compliant areas
 - **Real-Time Guidance**: Instant, legally-accurate advice for each compliance gap
@@ -257,7 +262,7 @@ This project was built using several excellent open-source technologies and serv
 - **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
 - **[ShadCN UI](https://ui.shadcn.com/)** - Component design patterns and inspiration
 - **[Vercel](https://vercel.com/)** - Deployment and hosting platform
-- **[National Privacy Commission of the Philippines](https://privacy.gov.ph/)** - Official source for RA 10173 information
+- **[National Privacy Commission of the Philippines](https://privacy.gov.ph/)** - Official source for RA 10173 information and structure diagrams
 
 ## Support
 
