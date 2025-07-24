@@ -46,9 +46,9 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">5-Minute Assessment</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Quick Assessment</h3>
                 <p className="text-gray-600 text-sm">
-                  Quick evaluation covering key compliance areas
+                  10 essential questions covering RA 10173 requirements
                 </p>
               </div>
               
