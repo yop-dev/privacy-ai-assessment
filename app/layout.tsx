@@ -45,7 +45,7 @@ export default function RootLayout({
                   <h1 className="text-xl font-bold text-gray-900 leading-tight">
                     Philippine Data Privacy
                   </h1>
-                  <p className="text-sm text-gray-600 leading-tight">Compliance Checker</p>
+                  <p className="text-sm text-gray-600 leading-tight">"RA 10173" Compliance Checker</p>
                 </div>
               </Link>
               
