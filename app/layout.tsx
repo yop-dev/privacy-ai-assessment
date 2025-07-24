@@ -103,6 +103,7 @@ export default function RootLayout({
                 <ul className="space-y-2 text-sm">
                   <li><Link href="/" className="text-gray-600 hover:text-primary-600 transition-colors">Home</Link></li>
                   <li><Link href="/check" className="text-gray-600 hover:text-primary-600 transition-colors">Start Assessment</Link></li>
+                  <li><Link href="/resources" className="text-gray-600 hover:text-primary-600 transition-colors">Resource Library</Link></li>
                   <li>
                     <a href="https://privacy.gov.ph/data-privacy-act" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-primary-600 transition-colors">
                       Official RA 10173 Text

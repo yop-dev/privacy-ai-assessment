@@ -29,6 +29,14 @@ An enterprise-grade compliance platform designed to help organizations achieve a
 - **Official Structure Diagram**: Interactive display of the Data Privacy Act organizational framework
 - **Government-Sourced Content**: Authentic materials from the National Privacy Commission of the Philippines
 - **Educational Visuals**: Clear presentation of RA 10173 structure to enhance understanding
+
+### Resource Library
+- **Comprehensive Template Collection**: Ready-to-use privacy policies, consent forms, and DPO appointment letters
+- **Interactive Filtering**: Browse by category (Templates, Guides, Checklists, Policies, Forms) and difficulty level
+- **Smart Search Functionality**: Real-time search across titles, descriptions, and categories
+- **Official NPC Resources**: Authentic forms and documents from the National Privacy Commission
+- **Downloadable Content**: PDF and DOCX files for immediate use
+- **AI Assistant Integration**: Contextual help for choosing the right resources
 - **Professional Interface**: Legal-themed chat interface with proper disclaimers
 - **Smart Feedback Generation**: AI-powered personalized recommendations for non-compliant areas
 - **Real-Time Guidance**: Instant, legally-accurate advice for each compliance gap
@@ -103,10 +111,19 @@ GROQ_API_KEY=your_groq_api_key_here
 
 ### Using the AI Legal Assistant
 
-1. **Access Chatbot**: Click the floating chat button in the bottom-right corner
+1. **Access Chatbot**: Click the floating chat button in the bottom-right corner or "Ask AI Assistant" in Resource Library
 2. **Ask Questions**: Type questions about RA 10173, data privacy rights, or compliance requirements
 3. **Get Instant Answers**: Receive immediate, context-aware legal guidance
 4. **Continue Conversation**: The assistant maintains context throughout your session
+5. **Resource Guidance**: Get help choosing the right templates and guides for your needs
+
+### Using the Resource Library
+
+1. **Browse Categories**: Click category icons to filter by Templates, Guides, Checklists, Policies, or Forms
+2. **Search Resources**: Use the search bar to find specific documents by keyword
+3. **Filter by Difficulty**: Choose Beginner, Intermediate, or Advanced level resources
+4. **Download Files**: Click download buttons for immediate access to PDF/DOCX files
+5. **Get AI Help**: Use "Ask AI Assistant" for personalized resource recommendations
 
 ### Assessment Coverage
 
@@ -126,6 +143,10 @@ The 10-question assessment covers these critical RA 10173 compliance areas:
 ### Example Questions for AI Assistant
 
 - "What are the key requirements for obtaining valid consent under RA 10173?"
+- "Which privacy policy template should I use for my small business?"
+- "Help me understand the difference between these consent forms"
+- "Do I need to conduct a Privacy Impact Assessment?"
+- "What security measures are required under RA 10173?"
 - "How do I implement a Privacy Impact Assessment for my business?"
 - "What should be included in a Privacy Management Program?"
 - "What are the penalties for data privacy violations?"
