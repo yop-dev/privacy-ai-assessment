@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Suspense } from 'react'
 import ResultCard from '@/components/ResultCard'
+import PDFReport from '@/components/PDFReport'
 
 interface ComplianceResult {
   status: 'compliant' | 'partially-compliant' | 'non-compliant'
@@ -225,6 +226,15 @@ function ResultContent({ searchParams }: { searchParams: { [key: string]: string
       {/* Action Buttons Section */}
       <section className="pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* PDF Report Generation */}
+          <div className="mb-16">
+            <PDFReport 
+              result={result}
+              actionSteps={actionSteps}
+              answers={answers}
+            />
+          </div>
+
           <div className="max-w-4xl mx-auto">
             <div className="card text-center bg-gray-50 border-gray-200">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">What's Next?</h3>

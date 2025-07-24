@@ -37,6 +37,14 @@ An enterprise-grade compliance platform designed to help organizations achieve a
 - **Official NPC Resources**: Authentic forms and documents from the National Privacy Commission
 - **Downloadable Content**: PDF and DOCX files for immediate use
 - **AI Assistant Integration**: Contextual help for choosing the right resources
+
+### PDF Report Generation
+- **Professional Reports**: Generate comprehensive compliance reports in PDF format
+- **Complete Assessment Data**: Includes all questions, answers, and compliance scores
+- **Action Plan Integration**: Prioritized recommendations with detailed descriptions
+- **Native PDF Generation**: Clean, professional layout using jsPDF text functions
+- **Instant Download**: One-click generation with timestamped filenames
+- **Business-Ready Output**: Professional formatting suitable for sharing with stakeholders
 - **Professional Interface**: Legal-themed chat interface with proper disclaimers
 - **Smart Feedback Generation**: AI-powered personalized recommendations for non-compliant areas
 - **Real-Time Guidance**: Instant, legally-accurate advice for each compliance gap
@@ -124,6 +132,14 @@ GROQ_API_KEY=your_groq_api_key_here
 3. **Filter by Difficulty**: Choose Beginner, Intermediate, or Advanced level resources
 4. **Download Files**: Click download buttons for immediate access to PDF/DOCX files
 5. **Get AI Help**: Use "Ask AI Assistant" for personalized resource recommendations
+
+### Generating PDF Reports
+
+1. **Complete Assessment**: Finish the 10-question compliance evaluation
+2. **View Results**: Review your compliance score and recommendations
+3. **Download Report**: Click "Download PDF Report" button on results page
+4. **Professional Output**: Receive a comprehensive PDF with executive summary, detailed results, and action plan
+5. **Share Results**: Use the professional report for compliance documentation or stakeholder presentations
 
 ### Assessment Coverage
 
