@@ -220,7 +220,7 @@ export default function QuestionForm() {
         ))}
 
         <div className="card bg-gray-50 border-gray-200">
-          <div className="text-center">
+          <div className="text-center flex flex-col items-center">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Ready to Get Your Results?</h3>
             <p className="text-gray-600 mb-6">
               {answeredCount < questions.length 

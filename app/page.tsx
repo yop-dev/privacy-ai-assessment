@@ -176,6 +176,33 @@ export default function HomePage() {
               </p>
             </div>
             
+            {/* Data Privacy Act Structure Image */}
+            <div className="mb-16 text-center">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">
+                THE STRUCTURE OF THE DATA PRIVACY ACT
+              </h3>
+              <div className="max-w-4xl mx-auto">
+                <img 
+                  src="/images/data-privacy-act-structure.png" 
+                  alt="Structure of the Philippine Data Privacy Act of 2012 (RA 10173)"
+                  className="w-full h-auto rounded-2xl shadow-lg border border-gray-200"
+                />
+                <div className="mt-4 text-center">
+                  <p className="text-sm text-gray-500">
+                    Source: 
+                    <a 
+                      href="https://privacy.gov.ph/the-data-privacy-act-and-its-irr" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-primary-600 hover:text-primary-700 underline ml-1"
+                    >
+                      National Privacy Commission of the Philippines
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="space-y-6">
