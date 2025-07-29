@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 interface ChatButtonProps {
   onClick: () => void
@@ -11,13 +12,29 @@ export default function ChatButton({ onClick, hasUnreadMessages = false }: ChatB
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <div className="fixed bottom-6 right-6 z-40">
-      <button
+    <motion.div 
+      className="fixed bottom-6 right-6 z-40"
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ 
+        type: "spring", 
+        stiffness: 260, 
+        damping: 20,
+        delay: 1 
+      }}
+    >
+      <motion.button
         onClick={onClick}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className="group relative bg-primary-600 hover:bg-primary-700 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+        className="group relative bg-primary-600 hover:bg-primary-700 text-white rounded-full p-4 shadow-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
         aria-label="Open legal assistant chat"
+        whileHover={{ 
+          scale: 1.1,
+          boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+        }}
+        whileTap={{ scale: 0.95 }}
+        transition={{ type: "spring", stiffness: 400, damping: 17 }}
       >
         {/* Chat Icon */}
         <svg 
@@ -47,9 +64,20 @@ export default function ChatButton({ onClick, hasUnreadMessages = false }: ChatB
           <div className="absolute top-full right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
         </div>
 
-        {/* Pulse Animation */}
-        <div className="absolute inset-0 rounded-full bg-primary-600 animate-ping opacity-20"></div>
-      </button>
-    </div>
+        {/* Enhanced Pulse Animation */}
+        <motion.div 
+          className="absolute inset-0 rounded-full bg-primary-600"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.3, 0, 0.3]
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      </motion.button>
+    </motion.div>
   )
 }

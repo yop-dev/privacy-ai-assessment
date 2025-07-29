@@ -1,8 +1,11 @@
 import Link from 'next/link'
 import QuestionForm from '@/components/QuestionForm'
+import PageTransition from '@/components/animations/PageTransition'
+import FadeInSection from '@/components/animations/FadeInSection'
 
 export default function CheckPage() {
   return (
+    <PageTransition>
     <div className="bg-gray-50 min-h-screen">
       {/* Header Section */}
       <section className="bg-white border-b border-gray-200">
@@ -18,23 +21,25 @@ export default function CheckPage() {
               Back to Home
             </Link>
             
-            <div className="text-center">
-              <div className="inline-flex items-center bg-primary-100 text-primary-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
-                </svg>
-                RA 10173 Compliance Assessment
+            <FadeInSection>
+              <div className="text-center">
+                <div className="inline-flex items-center bg-primary-100 text-primary-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                  </svg>
+                  RA 10173 Compliance Assessment
+                </div>
+                
+                <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance">
+                  Data Privacy Compliance Check
+                </h1>
+                
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto text-balance leading-relaxed">
+                  Answer the following questions honestly to assess your organization's compliance 
+                  with the Philippine Data Privacy Act of 2012
+                </p>
               </div>
-              
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-balance">
-                Data Privacy Compliance Check
-              </h1>
-              
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto text-balance leading-relaxed">
-                Answer the following questions honestly to assess your organization's compliance 
-                with the Philippine Data Privacy Act of 2012
-              </p>
-            </div>
+            </FadeInSection>
           </div>
         </div>
       </section>
@@ -101,5 +106,6 @@ export default function CheckPage() {
         </div>
       </section>
     </div>
+    </PageTransition>
   )
 }

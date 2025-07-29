@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import ChatProvider from '@/components/ChatProvider'
+import ScrollProgress from '@/components/animations/ScrollProgress'
 import '../styles/globals.css'
 
 export const metadata: Metadata = {
@@ -29,8 +30,9 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
       </head>
-      <body className="bg-gray-50 min-h-screen antialiased">
-        <header className="bg-white shadow-soft border-b border-gray-100 sticky top-0 z-50">
+      <body className="bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 min-h-screen antialiased">
+        <ScrollProgress />
+        <header className="bg-white shadow-soft border-b border-gray-100 sticky top-0 z-40">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-6">
               <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">

@@ -1,6 +1,11 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { motion } from 'framer-motion'
+import FadeInSection from './animations/FadeInSection'
+import AnimatedCard from './animations/AnimatedCard'
+import StaggeredList from './animations/StaggeredList'
+import LoadingSpinner from './animations/LoadingSpinner'
 
 interface ComplianceResult {
   status: 'compliant' | 'partially-compliant' | 'non-compliant'
