@@ -146,8 +146,14 @@ export default function PDFReport({ result, actionSteps, answers }: PDFReportPro
           
           // Priority badge
           pdf.setFontSize(8)
-          const priorityColor = step.priority === 'high' ? [200, 0, 0] : step.priority === 'medium' ? [200, 150, 0] : [0, 150, 0]
-          pdf.setTextColor(...priorityColor)
+          // Fix: Use proper tuple types for setTextColor
+          if (step.priority === 'high') {
+            pdf.setTextColor(200, 0, 0)
+          } else if (step.priority === 'medium') {
+            pdf.setTextColor(200, 150, 0)
+          } else {
+            pdf.setTextColor(0, 150, 0)
+          }
           pdf.text(`[${step.priority.toUpperCase()} PRIORITY]`, margin, yPosition)
           pdf.setTextColor(0, 0, 0)
           yPosition += 7
