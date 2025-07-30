@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import ChatProvider from '@/components/ChatProvider'
 import ScrollProgress from '@/components/animations/ScrollProgress'
+import AnimatedGlobalBackground from '@/components/backgrounds/AnimatedGlobalBackground'
 import '../styles/globals.css'
 
 export const metadata: Metadata = {
@@ -30,52 +31,57 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
       </head>
-      <body className="bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 min-h-screen antialiased">
+      <body className="min-h-screen antialiased">
+        <AnimatedGlobalBackground />
         <ScrollProgress />
-        <header className="bg-white shadow-soft border-b border-gray-100 sticky top-0 z-40">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center py-6">
-              <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden">
-                  <img 
-                    src="/favicon.ico" 
-                    alt="Philippine Data Privacy Compliance Checker Logo"
-                    className="w-10 h-10 object-contain"
-                  />
-                </div>
-                <div>
-                  <h1 className="text-xl font-bold text-gray-900 leading-tight">
-                    Philippine Data Privacy
-                  </h1>
-                  <p className="text-sm text-gray-600 leading-tight">"RA 10173" Compliance Checker</p>
-                </div>
-              </Link>
-              
-              <nav className="hidden md:flex items-center space-x-6">
-                <Link href="/" className="text-gray-600 hover:text-primary-600 font-medium transition-colors">
-                  Home
-                </Link>
-                <Link href="/check" className="text-gray-600 hover:text-primary-600 font-medium transition-colors">
-                  Assessment
-                </Link>
-                <Link href="/resources" className="text-gray-600 hover:text-primary-600 font-medium transition-colors">
-                  Resources
-                </Link>
-                <a 
-                  href="https://privacy.gov.ph/data-privacy-act" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-gray-600 hover:text-primary-600 font-medium transition-colors flex items-center"
-                >
-                  RA 10173
-                  <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              </nav>
-            </div>
-          </div>
-        </header>
+<header
+  className="bg-gray/80 backdrop-blur-md shadow-soft border-b-4 sticky top-0 z-40"
+  style={{ borderBottomColor: "skyblue" }}
+>
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-between items-center py-6">
+      <Link href="/" className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+        <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden">
+          <img 
+            src="/favicon.ico" 
+            alt="Philippine Data Privacy Compliance Checker Logo"
+            className="w-10 h-10 object-contain"
+          />
+        </div>
+        <div>
+          <h1 className="text-xl font-bold text-gray-900 leading-tight">
+            Philippine Data Privacy
+          </h1>
+          <p className="text-sm text-gray-600 leading-tight">"RA 10173" Compliance Checker</p>
+        </div>
+      </Link>
+      
+      <nav className="hidden md:flex items-center space-x-6">
+        <Link href="/" className="text-gray-600 hover:text-primary-600 font-medium transition-colors">
+          Home
+        </Link>
+        <Link href="/check" className="text-gray-600 hover:text-primary-600 font-medium transition-colors">
+          Assessment
+        </Link>
+        <Link href="/resources" className="text-gray-600 hover:text-primary-600 font-medium transition-colors">
+          Resources
+        </Link>
+        <a 
+          href="https://privacy.gov.ph/data-privacy-act" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="text-gray-600 hover:text-primary-600 font-medium transition-colors flex items-center"
+        >
+          RA 10173
+          <svg className="ml-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
+
         
         <main className="min-h-screen">
           <ChatProvider>
@@ -83,7 +89,7 @@ export default function RootLayout({
           </ChatProvider>
         </main>
         
-        <footer className="bg-white border-t border-gray-200 mt-20">
+        <footer className="bg-white/80 backdrop-blur-md border-t border-gray-200 mt-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="grid md:grid-cols-3 gap-8">
               <div>

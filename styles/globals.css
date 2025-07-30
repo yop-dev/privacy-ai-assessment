@@ -49,7 +49,7 @@
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-gray-50 text-gray-700 font-semibold py-4 px-8 rounded-xl border border-gray-300 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 shadow-sm hover:shadow-md flex items-center justify-center;
+    @apply bg-white/90 backdrop-blur-sm hover:bg-gray-50/90 text-gray-700 font-semibold py-4 px-8 rounded-xl border border-gray-300 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 shadow-sm hover:shadow-md flex items-center justify-center;
   }
   
   .btn-outline {
@@ -57,11 +57,11 @@
   }
   
   .card {
-    @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover border border-gray-100 p-8 transition-all duration-200;
+    @apply bg-white/90 backdrop-blur-sm rounded-2xl shadow-card hover:shadow-card-hover border border-gray-100 p-8 transition-all duration-200;
   }
   
   .card-compact {
-    @apply bg-white rounded-xl shadow-card border border-gray-100 p-6 transition-all duration-200;
+    @apply bg-white/90 backdrop-blur-sm rounded-xl shadow-card border border-gray-100 p-6 transition-all duration-200;
   }
   
   .section-divider {
@@ -98,5 +98,72 @@
   
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@layer utilities {
+  /* Dynamic animated gradient background */
+  .animated-gradient-bg {
+    background: linear-gradient(-45deg, 
+      #e2e8f0, #cbd5e1, #dbeafe, #bfdbfe, 
+      #ddd6fe, #c4b5fd, #d1fae5, #a7f3d0,
+      #e2e8f0, #cbd5e1);
+    background-size: 600% 600%;
+    animation: gradientFlow 15s ease-in-out infinite;
+  }
+
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    20% {
+      background-position: 100% 0%;
+    }
+    40% {
+      background-position: 100% 100%;
+    }
+    60% {
+      background-position: 0% 100%;
+    }
+    80% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Additional animated overlay for more dynamic effect */
+  .gradient-overlay {
+    background: linear-gradient(45deg,
+      rgba(248, 250, 252, 0.3),
+      rgba(241, 245, 249, 0.2),
+      rgba(226, 232, 240, 0.3),
+      rgba(224, 242, 254, 0.2),
+      rgba(240, 249, 255, 0.3),
+      rgba(236, 254, 255, 0.2));
+    background-size: 400% 400%;
+    animation: overlayShift 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes overlayShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  /* Reduced motion variant */
+  @media (prefers-reduced-motion: reduce) {
+    .animated-gradient-bg {
+      animation: none;
+      background: linear-gradient(-45deg, #f8fafc, #f1f5f9, #e2e8f0, #e0f2fe);
+    }
+    .gradient-overlay {
+      animation: none;
+      background: linear-gradient(45deg, rgba(248, 250, 252, 0.3), rgba(224, 242, 254, 0.2));
+    }
   }
 }
