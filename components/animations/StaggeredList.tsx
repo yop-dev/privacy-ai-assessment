@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { ReactNode } from 'react'
 
 interface StaggeredListProps {
@@ -20,36 +20,36 @@ export default function StaggeredList({
   staggerDelay = 0.1,
   direction = 'up'
 }: StaggeredListProps) {
-  const getVariants = () => {
-    const initial = direction === 'up' ? { y: 30, opacity: 0 } :
-                   direction === 'down' ? { y: -30, opacity: 0 } :
-                   direction === 'left' ? { x: 30, opacity: 0 } :
-                   { x: -30, opacity: 0 }
-
-    const animate = direction === 'up' || direction === 'down' ? 
-                   { y: 0, opacity: 1 } : 
-                   { x: 0, opacity: 1 }
-
-    return {
-      container: {
-        initial: {},
-        animate: {
-          transition: {
-            staggerChildren: staggerDelay,
-            delayChildren: 0.1
-          }
-        }
-      },
-      item: {
-        initial,
-        animate: {
-          ...animate,
-          transition: {
-            duration: 0.5,
-            ease: [0.25, 0.46, 0.45, 0.94]
-          }
+  const getVariants = (): { container: Variants; item: Variants } => {
+    const containerVariants: Variants = {
+      initial: {},
+      animate: {
+        transition: {
+          staggerChildren: staggerDelay,
+          delayChildren: 0.1
         }
       }
+    }
+
+    const itemVariants: Variants = {
+      initial: direction === 'up' ? { y: 30, opacity: 0 } :
+               direction === 'down' ? { y: -30, opacity: 0 } :
+               direction === 'left' ? { x: 30, opacity: 0 } :
+               { x: -30, opacity: 0 },
+      animate: {
+        y: direction === 'up' || direction === 'down' ? 0 : undefined,
+        x: direction === 'left' || direction === 'right' ? 0 : undefined,
+        opacity: 1,
+        transition: {
+          duration: 0.5,
+          ease: [0.25, 0.46, 0.45, 0.94] as const
+        }
+      }
+    }
+
+    return {
+      container: containerVariants,
+      item: itemVariants
     }
   }
 
@@ -61,7 +61,7 @@ export default function StaggeredList({
       variants={variants.container}
       initial="initial"
       whileInView="animate"
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       {children.map((child, index) => (
         <motion.div key={index} variants={variants.item}>

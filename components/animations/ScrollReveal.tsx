@@ -29,16 +29,17 @@ export default function ScrollReveal({
   triggerOnce = true
 }: ScrollRevealProps) {
   const ref = useRef(null)
+  
   const isInView = useInView(ref, { 
     once: triggerOnce,
-    margin: `-${threshold * 100}% 0px -${threshold * 100}% 0px`
+    amount: threshold
   })
 
   const getVariants = () => {
     const baseTransition = {
       duration,
       delay,
-      ease: [0.25, 0.46, 0.45, 0.94]
+      ease: [0.25, 0.46, 0.45, 0.94] as const
     }
 
     switch (direction) {
