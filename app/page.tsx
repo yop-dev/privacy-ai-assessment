@@ -13,6 +13,7 @@ import FloatingElements from '@/components/backgrounds/FloatingElements'
 
 export default function HomePage() {
   const { openChat } = useChatContext()
+  const videoTimestamp = Date.now()
   
   return (
     <PageTransition>
@@ -26,15 +27,15 @@ export default function HomePage() {
               loop
               muted
               playsInline
-              poster={`/videos/hero-poster.png?v=${Date.now()}`}
+              poster={`/videos/hero-poster.png?v=${videoTimestamp}`}
               className="absolute inset-0 w-full h-full object-cover"
-              key={Date.now()} // Force reload on component update
+              key={`hero-video-${videoTimestamp}`} // Force reload on component update
             >
-              <source src={`/videos/hero-background.mp4?v=${Date.now()}`} type="video/mp4" />
-              <source src={`/videos/hero-background.webm?v=${Date.now()}`} type="video/webm" />
+              <source src={`/videos/hero-background.mp4?v=${videoTimestamp}`} type="video/mp4" />
+              <source src={`/videos/hero-background.webm?v=${videoTimestamp}`} type="video/webm" />
               {/* Fallback for browsers that don't support video */}
               <img 
-                src={`/videos/hero-poster.png?v=${Date.now()}`}
+                src={`/videos/hero-poster.png?v=${videoTimestamp}`}
                 alt="Hero background" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -46,7 +47,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-white/5 -top-20"></div>
           
           {/* Header sectioning line - positioned at the bottom of header area */}
-          <div className="absolute top-20 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent z-20"></div>
+          <div className="absolute top-20 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent z-20"></div>
           
           {/* Content */}
           <div className="relative z-10">
@@ -154,16 +155,47 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* AI Assistant Chatbot Section */}
+{/* AI Assistant Chatbot Section */}
         <ScrollReveal>
-          <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative border-t border-gray-100">
-            <FloatingElements count={3} size="md" opacity={0.06} />
-            <PatternBackground pattern="grid" opacity={0.03}>
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <section className="py-20 relative overflow-hidden">
+            
+            {/* AI Assistant Video Background */}
+            <div className="absolute inset-0 w-full h-full">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster={`/videos/ai-assistant-poster.png?v=${videoTimestamp}`}
+                className="absolute inset-0 w-full h-full object-cover"
+                key={`ai-video-${videoTimestamp}`} // Force reload on component update
+              >
+                <source src={`/videos/ai-assistant-background.mp4?v=${videoTimestamp}`} type="video/mp4" />
+                <source src={`/videos/ai-assistant-background.webm?v=${videoTimestamp}`} type="video/webm" />
+                {/* Fallback for browsers that don't support video */}
+                <img 
+                  src={`/videos/ai-assistant-poster.png?v=${videoTimestamp}`}
+                  alt="AI Assistant background" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </video>
+            </div>
+            
+            {/* Video overlay for better text readability */}
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-indigo-900/40 to-purple-900/60"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20"></div>
+            
+            {/* Subtle floating elements over video */}
+            <div className="relative z-10">
+              <FloatingElements count={3} size="md" opacity={0.03} />
+            </div>
+            
+            {/* Content */}
+            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <FadeInSection delay={0.1}>
                   <div className="text-center mb-16">
                     <FadeInSection delay={0.2} direction="down">
-                      <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                      <div className="inline-flex items-center bg-white/20 text-white backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
                         <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
@@ -171,12 +203,12 @@ export default function HomePage() {
                       </div>
                     </FadeInSection>
                     <FadeInSection delay={0.3}>
-                      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                      <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 drop-shadow-lg">
                         Get Instant Help with Our AI Assistant
                       </h2>
                     </FadeInSection>
                     <FadeInSection delay={0.4}>
-                      <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                      <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
                         Have questions about RA 10173 compliance? Our AI assistant is trained on Philippine data privacy law 
                         and can provide instant, accurate answers to help guide your compliance journey.
                       </p>
@@ -187,7 +219,7 @@ export default function HomePage() {
                 <StaggeredList className="grid md:grid-cols-2 gap-8 mb-8" staggerDelay={0.2}>
                   {[
                     <AnimatedCard key="instant-responses" delay={0.6} hoverScale={1.02}>
-                      <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-md text-left h-full">
+                      <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-md text-left h-full">
                         <FadeInSection delay={0.7} direction="left">
                           <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                             <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -206,7 +238,7 @@ export default function HomePage() {
                     </AnimatedCard>,
                     
                     <AnimatedCard key="expert-knowledge" delay={0.7} hoverScale={1.02}>
-                      <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-md text-left h-full">
+                      <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-md text-left h-full">
                         <FadeInSection delay={0.8} direction="right">
                           <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
                             <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -228,7 +260,7 @@ export default function HomePage() {
                 
                 <FadeInSection delay={1.0}>
                   <AnimatedCard delay={1.1} hoverScale={1.01}>
-                    <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border-2 border-blue-200">
+                    <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border-2 border-blue-200">
                       <FadeInSection delay={1.2}>
                         <div className="flex items-center justify-center mb-6">
                           <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
@@ -237,8 +269,8 @@ export default function HomePage() {
                             </svg>
                           </div>
                           <div>
-                            <h3 className="text-2xl font-bold text-gray-900 mb-2">Start Chatting Now</h3>
-                            <p className="text-gray-600">Ask any question about Philippine data privacy compliance.</p>
+                            <h3 className="text-2xl font-bold text-black mb-2 drop-shadow-lg">Start Chatting Now</h3>
+                            <p className="text-grey drop-shadow-md">Ask any question about Philippine data privacy compliance.</p>
                           </div>
                         </div>
                       </FadeInSection>
@@ -247,14 +279,14 @@ export default function HomePage() {
                       <FadeInSection delay={1.3}>
                         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center gap-4">
                           <FadeInSection delay={1.4} direction="left">
-                            <div className="bg-gray-50 rounded-xl p-4">
-                              <div className="text-sm text-gray-600">
-                                <p className="font-medium mb-2 text-center lg:text-left">Example questions you can ask:</p>
-                                <StaggeredList className="space-y-1 text-gray-600" staggerDelay={0.1}>
+                            <div className="bg-white/40 backdrop-blur-sm rounded-xl p-4">
+                              <div className="text-sm text-gray-800">
+                                <p className="font-medium mb-2 text-center lg:text-left text-gray-900">Example questions you can ask:</p>
+                                <StaggeredList className="space-y-1 text-gray-700" staggerDelay={0.1}>
                                   {[
-                                    <li key="question-1">• "What are the key requirements for data breach notification?"</li>,
-                                    <li key="question-2">• "Do I need to register as a data controller?"</li>,
-                                    <li key="question-3">• "What consent requirements apply to my business?"</li>
+                                    <li key="question-1"> "What are the key requirements for data breach notification?"</li>,
+                                    <li key="question-2"> "Do I need to register as a data controller?"</li>,
+                                    <li key="question-3"> "What consent requirements apply to my business?"</li>
                                   ]}
                                 </StaggeredList>
                               </div>
@@ -280,7 +312,6 @@ export default function HomePage() {
                   </AnimatedCard>
                 </FadeInSection>
               </div>
-            </PatternBackground>
           </section>
         </ScrollReveal>
 
