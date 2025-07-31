@@ -126,93 +126,134 @@ export default function HomePage() {
         </div>
 
         {/* AI Assistant Chatbot Section */}
-        <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative border-t border-gray-100">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="text-center mb-16">
-                <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                  AI-Powered Assistance
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                  Get Instant Help with Our AI Assistant
-                </h2>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                  Have questions about RA 10173 compliance? Our AI assistant is trained on Philippine data privacy law 
-                  and can provide instant, accurate answers to help guide your compliance journey.
-                </p>
-              </div>
+        <ScrollReveal>
+          <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative border-t border-gray-100">
+            <FloatingElements count={3} size="md" opacity={0.06} />
+            <PatternBackground pattern="grid" opacity={0.03}>
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <FadeInSection delay={0.1}>
+                  <div className="text-center mb-16">
+                    <FadeInSection delay={0.2} direction="down">
+                      <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                        <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                        </svg>
+                        AI-Powered Assistance
+                      </div>
+                    </FadeInSection>
+                    <FadeInSection delay={0.3}>
+                      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                        Get Instant Help with Our AI Assistant
+                      </h2>
+                    </FadeInSection>
+                    <FadeInSection delay={0.4}>
+                      <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                        Have questions about RA 10173 compliance? Our AI assistant is trained on Philippine data privacy law 
+                        and can provide instant, accurate answers to help guide your compliance journey.
+                      </p>
+                    </FadeInSection>
+                  </div>
+                </FadeInSection>
 
-              <div className="grid md:grid-cols-2 gap-8 mb-8">
-                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-md text-left">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Instant Responses</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Get immediate answers to your data privacy questions, available 24/7 to support your compliance efforts 
-                    whenever you need guidance.
-                  </p>
-                </div>
+                <StaggeredList className="grid md:grid-cols-2 gap-8 mb-8" staggerDelay={0.2}>
+                  {[
+                    <AnimatedCard key="instant-responses" delay={0.6} hoverScale={1.02}>
+                      <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-md text-left h-full">
+                        <FadeInSection delay={0.7} direction="left">
+                          <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                          </div>
+                        </FadeInSection>
+                        <FadeInSection delay={0.8} direction="left">
+                          <h3 className="text-lg font-semibold text-gray-900 mb-3">Instant Responses</h3>
+                          <p className="text-gray-600 leading-relaxed">
+                            Get immediate answers to your data privacy questions, available 24/7 to support your compliance efforts 
+                            whenever you need guidance.
+                          </p>
+                        </FadeInSection>
+                      </div>
+                    </AnimatedCard>,
+                    
+                    <AnimatedCard key="expert-knowledge" delay={0.7} hoverScale={1.02}>
+                      <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-md text-left h-full">
+                        <FadeInSection delay={0.8} direction="right">
+                          <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                            <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                            </svg>
+                          </div>
+                        </FadeInSection>
+                        <FadeInSection delay={0.9} direction="right">
+                          <h3 className="text-lg font-semibold text-gray-900 mb-3">Expert Knowledge</h3>
+                          <p className="text-gray-600 leading-relaxed">
+                            Our AI is trained on the complete RA 10173 text, official guidelines, and best practices to provide 
+                            accurate, reliable information.
+                          </p>
+                        </FadeInSection>
+                      </div>
+                    </AnimatedCard>
+                  ]}
+                </StaggeredList>
                 
-                <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-md text-left">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-3">Expert Knowledge</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Our AI is trained on the complete RA 10173 text, official guidelines, and best practices to provide 
-                    accurate, reliable information.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border-2 border-blue-200">
-                <div className="flex items-center justify-center mb-6">
-                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                    <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Start Chatting Now</h3>
-                    <p className="text-gray-600">Ask any question about Philippine data privacy compliance.</p>
-                  </div>
-                </div>
-                
-                {/* Modified section with side-by-side layout */}
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center gap-4">
-                  <div className="bg-gray-50 rounded-xl p-4">
-                    <div className="text-sm text-gray-600">
-                      <p className="font-medium mb-2 text-center lg:text-left">Example questions you can ask:</p>
-                      <ul className="space-y-1 text-gray-600">
-                        <li>• "What are the key requirements for data breach notification?"</li>
-                        <li>• "Do I need to register as a data controller?"</li>
-                        <li>• "What consent requirements apply to my business?"</li>
-                      </ul>
+                <FadeInSection delay={1.0}>
+                  <AnimatedCard delay={1.1} hoverScale={1.01}>
+                    <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg border-2 border-blue-200">
+                      <FadeInSection delay={1.2}>
+                        <div className="flex items-center justify-center mb-6">
+                          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                            <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                          </div>
+                          <div>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-2">Start Chatting Now</h3>
+                            <p className="text-gray-600">Ask any question about Philippine data privacy compliance.</p>
+                          </div>
+                        </div>
+                      </FadeInSection>
+                      
+                      {/* Modified section with side-by-side layout */}
+                      <FadeInSection delay={1.3}>
+                        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center gap-4">
+                          <FadeInSection delay={1.4} direction="left">
+                            <div className="bg-gray-50 rounded-xl p-4">
+                              <div className="text-sm text-gray-600">
+                                <p className="font-medium mb-2 text-center lg:text-left">Example questions you can ask:</p>
+                                <StaggeredList className="space-y-1 text-gray-600" staggerDelay={0.1}>
+                                  {[
+                                    <li key="question-1">• "What are the key requirements for data breach notification?"</li>,
+                                    <li key="question-2">• "Do I need to register as a data controller?"</li>,
+                                    <li key="question-3">• "What consent requirements apply to my business?"</li>
+                                  ]}
+                                </StaggeredList>
+                              </div>
+                            </div>
+                          </FadeInSection>
+                          
+                          <FadeInSection delay={1.6} direction="right">
+                            <div className="flex-shrink-0 text-center lg:text-right">
+                              <button 
+                                onClick={openChat}
+                                className="btn-primary-large"
+                              >
+                                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                </svg>
+                                Ask AI Assistant
+                              </button>
+                            </div>
+                          </FadeInSection>
+                        </div>
+                      </FadeInSection>
                     </div>
-                  </div>
-                  
-                  <div className="flex-shrink-0 text-center lg:text-right">
-                    <button 
-                      onClick={openChat}
-                      className="btn-primary-large"
-                    >
-                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                      </svg>
-                      Ask AI Assistant
-                    </button>
-                  </div>
-                </div>
+                  </AnimatedCard>
+                </FadeInSection>
               </div>
-            </div>
-        </section>
+            </PatternBackground>
+          </section>
+        </ScrollReveal>
 
         {/* Key Principles Section */}
         <section className="py-20 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative border-t border-gray-100">
