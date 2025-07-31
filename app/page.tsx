@@ -17,10 +17,39 @@ export default function HomePage() {
   return (
     <PageTransition>
       <div>
-        {/* Hero Section with animated background */}
-        <div className="relative">
-          <FloatingElements count={4} size="lg" opacity={0.08} />
-          <PatternBackground pattern="dots" opacity={0.05}>
+        {/* Hero Section with video background extending to header */}
+        <div className="relative overflow-hidden -mt-20 pt-20">
+          {/* Video Background */}
+          <div className="absolute inset-0 w-full h-full -top-20">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              poster={`/videos/hero-poster.png?v=${Date.now()}`}
+              className="absolute inset-0 w-full h-full object-cover"
+              key={Date.now()} // Force reload on component update
+            >
+              <source src={`/videos/hero-background.mp4?v=${Date.now()}`} type="video/mp4" />
+              <source src={`/videos/hero-background.webm?v=${Date.now()}`} type="video/webm" />
+              {/* Fallback for browsers that don't support video */}
+              <img 
+                src={`/videos/hero-poster.png?v=${Date.now()}`}
+                alt="Hero background" 
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </video>
+          </div>
+          
+          {/* Video overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-black/40 -top-20"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-white/5 -top-20"></div>
+          
+          {/* Header sectioning line - positioned at the bottom of header area */}
+          <div className="absolute top-20 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent z-20"></div>
+          
+          {/* Content */}
+          <div className="relative z-10">
             <section className="py-20 lg:py-32">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center max-w-4xl mx-auto">
@@ -83,8 +112,8 @@ export default function HomePage() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                           </div>
-                          <h3 className="text-xl font-semibold text-gray-900 mb-3">Quick Assessment</h3>
-                          <p className="text-gray-600 leading-relaxed">
+                          <h3 className="text-xl font-semibold text-white mb-3 drop-shadow-lg">Quick Assessment</h3>
+                          <p className="text-white/90 leading-relaxed drop-shadow-md">
                             Complete a comprehensive compliance check in under 10 minutes with our guided questionnaire.
                           </p>
                         </div>
@@ -97,8 +126,8 @@ export default function HomePage() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 00-2-2z" />
                             </svg>
                           </div>
-                          <h3 className="text-xl font-semibold text-gray-900 mb-3">Detailed Reports</h3>
-                          <p className="text-gray-600 leading-relaxed">
+                          <h3 className="text-xl font-semibold text-white mb-3 drop-shadow-lg">Detailed Reports</h3>
+                          <p className="text-white/90 leading-relaxed drop-shadow-md">
                             Receive actionable insights with specific recommendations tailored to your business needs.
                           </p>
                         </div>
@@ -111,8 +140,8 @@ export default function HomePage() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                             </svg>
                           </div>
-                          <h3 className="text-xl font-semibold text-gray-900 mb-3">Expert Resources</h3>
-                          <p className="text-gray-600 leading-relaxed">
+                          <h3 className="text-xl font-semibold text-white mb-3 drop-shadow-lg">Expert Resources</h3>
+                          <p className="text-white/90 leading-relaxed drop-shadow-md">
                             Access comprehensive guides, templates, and official documentation for RA 10173 compliance.
                           </p>
                         </div>
@@ -122,7 +151,7 @@ export default function HomePage() {
                 </div>
               </div>
             </section>
-          </PatternBackground>
+          </div>
         </div>
 
         {/* AI Assistant Chatbot Section */}
