@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { useChatContext } from '@/components/ChatProvider'
 import FadeInSection from '@/components/animations/FadeInSection'
@@ -11,6 +12,7 @@ import FloatingElements from '@/components/backgrounds/FloatingElements'
 
 export default function HomePage() {
   const { openChat } = useChatContext()
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false)
   const videoTimestamp = Date.now()
   
   return (
@@ -397,11 +399,22 @@ export default function HomePage() {
                   <div className="card bg-primary-50 border-primary-200 hover:shadow-lg transition-shadow duration-300">
                     <h3 className="text-xl font-semibold text-primary-900 mb-4">RA 10173 Structure Overview</h3>
                     <div className="mb-6">
-                      <img 
-                        src="/images/data-privacy-act-structure.png" 
-                        alt="Philippine Data Privacy Act Structure Diagram"
-                        className="w-full h-auto rounded-lg shadow-sm"
-                      />
+                      <div className="relative group cursor-pointer" onClick={() => setIsImageModalOpen(true)}>
+                        <img 
+                          src="/images/data-privacy-act-structure.png" 
+                          alt="Philippine Data Privacy Act Structure Diagram"
+                          className="w-full h-auto rounded-lg shadow-sm transition-all duration-300 group-hover:shadow-lg"
+                        />
+                        {/* Overlay with expand icon */}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 rounded-lg flex items-center justify-center">
+                          <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
+                            <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-xs text-gray-500 mt-2 text-center">Click to expand image</p>
                     </div>
                     <a 
                       href="https://privacy.gov.ph/data-privacy-act" 
@@ -424,6 +437,70 @@ export default function HomePage() {
           </div>
         </section>
       </div>
+
+      {/* Image Modal */}
+      {isImageModalOpen && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div className="relative max-w-6xl max-h-[90vh] w-full">
+            {/* Close button */}
+            <button
+              onClick={() => setIsImageModalOpen(false)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200 z-10"
+              aria-label="Close modal"
+            >
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            
+            {/* Modal content */}
+            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
+              <div className="p-6 bg-primary-50 border-b border-primary-200">
+                <h3 className="text-2xl font-bold text-primary-900 text-center">
+                  RA 10173 Structure Overview
+                </h3>
+                <p className="text-primary-700 text-center mt-2">
+                  Philippine Data Privacy Act of 2012 - Complete Structure Diagram
+                </p>
+              </div>
+              
+              <div className="p-6 bg-white">
+                <img 
+                  src="/images/data-privacy-act-structure.png" 
+                  alt="Philippine Data Privacy Act Structure Diagram - Expanded View"
+                  className="w-full h-auto max-h-[70vh] object-contain mx-auto"
+                />
+              </div>
+              
+              <div className="p-4 bg-gray-50 border-t border-gray-200">
+                <div className="flex items-center justify-between">
+                  <p className="text-sm text-gray-600">
+                    Source: National Privacy Commission of the Philippines
+                  </p>
+                  <div className="flex space-x-3">
+                    <a 
+                      href="/images/data-privacy-act-structure.png" 
+                      download="RA-10173-Structure-Overview.png"
+                      className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+                    >
+                      <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-4-4m4 4l4-4m-4-4V3" />
+                      </svg>
+                      Download
+                    </a>
+                    <button
+                      onClick={() => setIsImageModalOpen(false)}
+                      className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </PageTransition>
   )
 }
