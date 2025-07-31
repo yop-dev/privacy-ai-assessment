@@ -258,53 +258,75 @@ export default function HomePage() {
                 </StaggeredList>
                 
                 <FadeInSection delay={0.3}>
-                  <AnimatedCard delay={0.35} hoverScale={1.01}>
-                    <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border-2 border-blue-200">
+                  <AnimatedCard delay={0.35} hoverScale={1.02}>
+                    <div className="bg-white/70 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/30">
                       <FadeInSection delay={0.4}>
-                        <div className="flex items-center justify-center mb-6">
-                          <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                            <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <div className="text-center mb-8">
+                          <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-500 rounded-2xl mb-4 shadow-lg">
+                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                             </svg>
                           </div>
-                          <div>
-                            <h3 className="text-2xl font-bold text-black mb-2 drop-shadow-lg">Start Chatting Now</h3>
-                            <p className="text-grey drop-shadow-md">Ask any question about Philippine data privacy compliance.</p>
-                          </div>
+                          <h3 className="text-3xl font-bold text-gray-900 mb-3">Ready to Get Started?</h3>
+                          <p className="text-lg text-gray-700 mb-6">Our AI assistant is here to help with your Philippine data privacy compliance questions</p>
+                          
+                          {/* CTA Button - Moved to top for better visibility */}
+                          <button 
+                            onClick={openChat}
+                            className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg rounded-2xl transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl mb-8"
+                          >
+                            <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            </svg>
+                            Start Chatting Now
+                            <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                          </button>
                         </div>
                       </FadeInSection>
                       
-                      {/* Modified section with side-by-side layout */}
+                      {/* Enhanced Examples Section */}
                       <FadeInSection delay={0.45}>
-                        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center gap-4">
-                          <FadeInSection delay={0.5} direction="left">
-                            <div className="bg-white/40 backdrop-blur-sm rounded-xl p-4">
-                              <div className="text-sm text-gray-800">
-                                <p className="font-medium mb-2 text-center lg:text-left text-gray-900">Example questions you can ask:</p>
-                                <StaggeredList className="space-y-1 text-gray-700" staggerDelay={0.05}>
-                                  {[
-                                    <li key="question-1"> "What are the key requirements for data breach notification?"</li>,
-                                    <li key="question-2"> "Do I need to register as a data controller?"</li>,
-                                    <li key="question-3"> "What consent requirements apply to my business?"</li>
-                                  ]}
-                                </StaggeredList>
-                              </div>
+                        <div className="bg-gray-50/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50">
+                          <div className="flex items-center mb-4">
+                            <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3">
+                              <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                              </svg>
                             </div>
-                          </FadeInSection>
+                            <h4 className="text-lg font-semibold text-gray-900">Try asking questions like:</h4>
+                          </div>
                           
-                          <FadeInSection delay={0.55} direction="right">
-                            <div className="flex-shrink-0 text-center lg:text-right">
-                              <button 
-                                onClick={openChat}
-                                className="btn-primary-large"
-                              >
-                                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                                </svg>
-                                Ask AI Assistant
-                              </button>
+                          <StaggeredList className="grid md:grid-cols-2 gap-3" staggerDelay={0.05}>
+                            {[
+                              <div key="question-1" className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white/80 transition-colors duration-200">
+                                <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <p className="text-gray-700 text-sm">"What are the key requirements for data breach notification under RA 10173?"</p>
+                              </div>,
+                              <div key="question-2" className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white/80 transition-colors duration-200">
+                                <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <p className="text-gray-700 text-sm">"Do I need to register as a data controller with the NPC?"</p>
+                              </div>,
+                              <div key="question-3" className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white/80 transition-colors duration-200">
+                                <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <p className="text-gray-700 text-sm">"What consent requirements apply to my business operations?"</p>
+                              </div>,
+                              <div key="question-4" className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white/80 transition-colors duration-200">
+                                <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                                <p className="text-gray-700 text-sm">"How do I implement a Privacy Management Program?"</p>
+                              </div>
+                            ]}
+                          </StaggeredList>
+                          
+                          <div className="mt-4 p-3 bg-blue-50/80 rounded-xl border border-blue-200/50">
+                            <div className="flex items-center text-blue-800">
+                              <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              <p className="text-sm font-medium">Available 24/7 • Instant responses • Based on official RA 10173 guidelines</p>
                             </div>
-                          </FadeInSection>
+                          </div>
                         </div>
                       </FadeInSection>
                     </div>
