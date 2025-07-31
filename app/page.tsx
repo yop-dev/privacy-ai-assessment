@@ -78,8 +78,8 @@ export default function HomePage() {
                   </FadeInSection>
 
                   <FadeInSection delay={0.2}>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-                      <Link href="/check" className="btn-primary-large">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center w-full max-w-6xl mx-auto mb-12">
+                      <Link href="/check" className="btn-primary-large flex-1 sm:flex-none sm:min-w-[280px]">
                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
@@ -87,65 +87,75 @@ export default function HomePage() {
                       </Link>
                       <button 
                         onClick={openChat}
-                        className="btn-secondary"
+                        className="btn-secondary flex-1 sm:flex-none sm:min-w-[280px]"
                       >
                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                         </svg>
                         Ask AI Assistant
                       </button>
-                      <Link href="/resources" className="btn-outline">
-                        <span className="flex items-center">
-                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                          </svg>
-                          Resource Library
-                        </span>
+                      <Link href="/resources" className="btn-outline flex-1 sm:flex-none sm:min-w-[280px] flex items-center justify-center">
+                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        Resource Library
                       </Link>
                     </div>
                   </FadeInSection>
 
                   <FadeInSection delay={0.3}>
-                    <div className="grid md:grid-cols-3 gap-8 mb-16">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
                       <AnimatedCard delay={0.1}>
-                        <div className="text-center">
-                          <div className="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <svg className="w-8 h-8 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
+                        <div className="text-left">
+                          <div className="flex items-start mb-4">
+                            <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                              <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-semibold text-white mb-3 drop-shadow-lg">Quick Assessment</h3>
+                              <p className="text-white/90 leading-relaxed drop-shadow-md">
+                                Complete a comprehensive compliance check in under 10 minutes with our guided questionnaire.
+                              </p>
+                            </div>
                           </div>
-                          <h3 className="text-xl font-semibold text-white mb-3 drop-shadow-lg">Quick Assessment</h3>
-                          <p className="text-white/90 leading-relaxed drop-shadow-md">
-                            Complete a comprehensive compliance check in under 10 minutes with our guided questionnaire.
-                          </p>
                         </div>
                       </AnimatedCard>
 
                       <AnimatedCard delay={0.2}>
-                        <div className="text-center">
-                          <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 00-2-2z" />
-                            </svg>
+                        <div className="text-left">
+                          <div className="flex items-start mb-4">
+                            <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                              <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 00-2-2z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-semibold text-white mb-3 drop-shadow-lg">Detailed Reports</h3>
+                              <p className="text-white/90 leading-relaxed drop-shadow-md">
+                                Receive actionable insights with specific recommendations tailored to your business needs.
+                              </p>
+                            </div>
                           </div>
-                          <h3 className="text-xl font-semibold text-white mb-3 drop-shadow-lg">Detailed Reports</h3>
-                          <p className="text-white/90 leading-relaxed drop-shadow-md">
-                            Receive actionable insights with specific recommendations tailored to your business needs.
-                          </p>
                         </div>
                       </AnimatedCard>
 
                       <AnimatedCard delay={0.3}>
-                        <div className="text-center">
-                          <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                            </svg>
+                        <div className="text-left">
+                          <div className="flex items-start mb-4">
+                            <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                              <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                              </svg>
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-semibold text-white mb-3 drop-shadow-lg">Expert Resources</h3>
+                              <p className="text-white/90 leading-relaxed drop-shadow-md">
+                                Access comprehensive guides, templates, and official documentation for RA 10173 compliance.
+                              </p>
+                            </div>
                           </div>
-                          <h3 className="text-xl font-semibold text-white mb-3 drop-shadow-lg">Expert Resources</h3>
-                          <p className="text-white/90 leading-relaxed drop-shadow-md">
-                            Access comprehensive guides, templates, and official documentation for RA 10173 compliance.
-                          </p>
                         </div>
                       </AnimatedCard>
                     </div>
@@ -217,23 +227,25 @@ export default function HomePage() {
                   </div>
                 </FadeInSection>
 
-                <StaggeredList className="grid md:grid-cols-2 gap-8 mb-8" staggerDelay={0.1}>
+                <StaggeredList className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8" staggerDelay={0.1}>
                   {[
                     <AnimatedCard key="instant-responses" delay={0.25} hoverScale={1.02}>
                       <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-md text-left h-full">
                         <FadeInSection delay={0.27} direction="left">
-                          <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
-                            <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                            </svg>
+                          <div className="flex items-start">
+                            <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                              <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <h3 className="text-lg font-semibold text-gray-900 mb-3">Instant Responses</h3>
+                              <p className="text-gray-600 leading-relaxed">
+                                Get immediate answers to your data privacy questions, available 24/7 to support your compliance efforts 
+                                whenever you need guidance.
+                              </p>
+                            </div>
                           </div>
-                        </FadeInSection>
-                        <FadeInSection delay={0.29} direction="left">
-                          <h3 className="text-lg font-semibold text-gray-900 mb-3">Instant Responses</h3>
-                          <p className="text-gray-600 leading-relaxed">
-                            Get immediate answers to your data privacy questions, available 24/7 to support your compliance efforts 
-                            whenever you need guidance.
-                          </p>
                         </FadeInSection>
                       </div>
                     </AnimatedCard>,
@@ -241,18 +253,20 @@ export default function HomePage() {
                     <AnimatedCard key="expert-knowledge" delay={0.27} hoverScale={1.02}>
                       <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-md text-left h-full">
                         <FadeInSection delay={0.29} direction="right">
-                          <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
-                            <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                            </svg>
+                          <div className="flex items-start">
+                            <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                              <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                              </svg>
+                            </div>
+                            <div>
+                              <h3 className="text-lg font-semibold text-gray-900 mb-3">Expert Knowledge</h3>
+                              <p className="text-gray-600 leading-relaxed">
+                                Our AI is trained on the complete RA 10173 text, official guidelines, and best practices to provide 
+                                accurate, reliable information.
+                              </p>
+                            </div>
                           </div>
-                        </FadeInSection>
-                        <FadeInSection delay={0.31} direction="right">
-                          <h3 className="text-lg font-semibold text-gray-900 mb-3">Expert Knowledge</h3>
-                          <p className="text-gray-600 leading-relaxed">
-                            Our AI is trained on the complete RA 10173 text, official guidelines, and best practices to provide 
-                            accurate, reliable information.
-                          </p>
                         </FadeInSection>
                       </div>
                     </AnimatedCard>
@@ -264,18 +278,13 @@ export default function HomePage() {
                     <div className="bg-white/70 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/30">
                       <FadeInSection delay={0.4}>
                         <div className="text-center mb-8">
-                          <div className="inline-flex items-center justify-center w-20 h-20 bg-blue-500 rounded-2xl mb-4 shadow-lg">
-                            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                            </svg>
-                          </div>
-                          <h3 className="text-3xl font-bold text-gray-900 mb-3">Ready to Get Started?</h3>
-                          <p className="text-lg text-gray-700 mb-6">Our AI assistant is here to help with your Philippine data privacy compliance questions</p>
+                          <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Ready to Get Started?</h3>
+                          <p className="text-base sm:text-lg text-gray-700 mb-6">Our AI assistant is here to help with your Philippine data privacy compliance questions</p>
                           
-                          {/* CTA Button - Moved to top for better visibility */}
+                          {/* CTA Button - Mobile optimized */}
                           <button 
                             onClick={openChat}
-                            className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-lg rounded-2xl transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl mb-8"
+                            className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold text-base sm:text-lg rounded-xl sm:rounded-2xl transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl mb-6 sm:mb-8 w-full sm:w-auto justify-center"
                           >
                             <svg className="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
@@ -290,7 +299,7 @@ export default function HomePage() {
                       
                       {/* Enhanced Examples Section */}
                       <FadeInSection delay={0.45}>
-                        <div className="bg-gray-50/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50">
+                        <div className="bg-gray-50/80 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-gray-200/50">
                           <div className="flex items-center mb-4">
                             <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3">
                               <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -300,7 +309,7 @@ export default function HomePage() {
                             <h4 className="text-lg font-semibold text-gray-900">Try asking questions like:</h4>
                           </div>
                           
-                          <StaggeredList className="grid md:grid-cols-2 gap-3" staggerDelay={0.05}>
+                          <StaggeredList className="grid grid-cols-1 sm:grid-cols-2 gap-3" staggerDelay={0.05}>
                             {[
                               <div key="question-1" className="flex items-start space-x-3 p-3 bg-white/60 rounded-xl hover:bg-white/80 transition-colors duration-200">
                                 <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
@@ -351,7 +360,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
               <ScrollReveal direction="left" delay={0.2} distance={60}>
                 <div className="space-y-8">
                   <StaggeredList>
@@ -438,50 +447,50 @@ export default function HomePage() {
         </section>
       </div>
 
-      {/* Image Modal */}
+      {/* Image Modal - Mobile Optimized */}
       {isImageModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="relative max-w-6xl max-h-[90vh] w-full">
-            {/* Close button */}
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80 backdrop-blur-sm">
+          <div className="relative max-w-6xl max-h-[95vh] w-full">
+            {/* Close button - Mobile optimized */}
             <button
               onClick={() => setIsImageModalOpen(false)}
-              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200 z-10"
+              className="absolute -top-8 sm:-top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200 z-10 p-2"
               aria-label="Close modal"
             >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
             
             {/* Modal content */}
-            <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">
-              <div className="p-6 bg-primary-50 border-b border-primary-200">
-                <h3 className="text-2xl font-bold text-primary-900 text-center">
+            <div className="bg-white rounded-xl sm:rounded-2xl shadow-2xl overflow-hidden max-h-[95vh] flex flex-col">
+              <div className="p-3 sm:p-6 bg-primary-50 border-b border-primary-200 flex-shrink-0">
+                <h3 className="text-lg sm:text-2xl font-bold text-primary-900 text-center">
                   RA 10173 Structure Overview
                 </h3>
-                <p className="text-primary-700 text-center mt-2">
+                <p className="text-sm sm:text-base text-primary-700 text-center mt-1 sm:mt-2">
                   Philippine Data Privacy Act of 2012 - Complete Structure Diagram
                 </p>
               </div>
               
-              <div className="p-6 bg-white">
+              <div className="p-3 sm:p-6 bg-white flex-1 overflow-auto">
                 <img 
                   src="/images/data-privacy-act-structure.png" 
                   alt="Philippine Data Privacy Act Structure Diagram - Expanded View"
-                  className="w-full h-auto max-h-[70vh] object-contain mx-auto"
+                  className="w-full h-auto max-h-[60vh] sm:max-h-[70vh] object-contain mx-auto"
                 />
               </div>
               
-              <div className="p-4 bg-gray-50 border-t border-gray-200">
-                <div className="flex items-center justify-between">
-                  <p className="text-sm text-gray-600">
+              <div className="p-3 sm:p-4 bg-gray-50 border-t border-gray-200 flex-shrink-0">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                  <p className="text-xs sm:text-sm text-gray-600 text-center sm:text-left">
                     Source: National Privacy Commission of the Philippines
                   </p>
-                  <div className="flex space-x-3">
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                     <a 
                       href="/images/data-privacy-act-structure.png" 
                       download="RA-10173-Structure-Overview.png"
-                      className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+                      className="inline-flex items-center justify-center px-3 sm:px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
                     >
                       <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-4-4m4 4l4-4m-4-4V3" />
@@ -490,7 +499,7 @@ export default function HomePage() {
                     </a>
                     <button
                       onClick={() => setIsImageModalOpen(false)}
-                      className="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
+                      className="px-3 sm:px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium rounded-lg transition-colors duration-200"
                     >
                       Close
                     </button>
