@@ -7,8 +7,6 @@ import AnimatedCard from '@/components/animations/AnimatedCard'
 import StaggeredList from '@/components/animations/StaggeredList'
 import PageTransition from '@/components/animations/PageTransition'
 import ScrollReveal from '@/components/animations/ScrollReveal'
-import ParallaxSection from '@/components/animations/ParallaxSection'
-import PatternBackground from '@/components/backgrounds/PatternBackground'
 import FloatingElements from '@/components/backgrounds/FloatingElements'
 
 export default function HomePage() {
@@ -43,11 +41,12 @@ export default function HomePage() {
           </div>
           
           {/* Video overlay for better text readability */}
-          <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-black/20 to-black/40 -top-20"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-white/10 via-transparent to-white/5 -top-20"></div>
+          <div className="absolute inset-0 bg-black/30 -top-20"></div>
+          {/* Smooth bottom transition */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/30 to-transparent"></div>
           
           {/* Header sectioning line - positioned at the bottom of header area */}
-          <div className="absolute top-20 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent z-20"></div>
+          <div className="absolute top-20 left-0 right-0 h-px bg-white/10 z-20"></div>
           
           {/* Content */}
           <div className="relative z-10">
@@ -63,7 +62,7 @@ export default function HomePage() {
                         Trusted Compliance Platform
                       </div>
                       <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-                        <span className="bg-gradient-to-r from-primary-600 to-blue-600 bg-clip-text text-transparent">
+                        <span className="text-primary-600">
                           Philippine Data Privacy
                         </span>
                         <br />
@@ -155,9 +154,9 @@ export default function HomePage() {
           </div>
         </div>
 
-{/* AI Assistant Chatbot Section */}
+{/* AI Assistant Chatbot Section - Seamless transition */}
         <ScrollReveal>
-          <section className="py-20 relative overflow-hidden">
+          <section className="relative overflow-hidden -mt-20 pt-20">
             
             {/* AI Assistant Video Background */}
             <div className="absolute inset-0 w-full h-full">
@@ -181,9 +180,9 @@ export default function HomePage() {
               </video>
             </div>
             
-            {/* Video overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-indigo-900/40 to-purple-900/60"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20"></div>
+            {/* Smooth gradient overlay for seamless transition */}
+            <div className="absolute inset-0 bg-black/20"></div>
+            <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-black/30 to-transparent"></div>
             
             {/* Subtle floating elements over video */}
             <div className="relative z-10">
@@ -191,7 +190,7 @@ export default function HomePage() {
             </div>
             
             {/* Content */}
-            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <FadeInSection delay={0.1}>
                   <div className="text-center mb-16">
                     <FadeInSection delay={0.2} direction="down">
@@ -216,18 +215,18 @@ export default function HomePage() {
                   </div>
                 </FadeInSection>
 
-                <StaggeredList className="grid md:grid-cols-2 gap-8 mb-8" staggerDelay={0.2}>
+                <StaggeredList className="grid md:grid-cols-2 gap-8 mb-8" staggerDelay={0.1}>
                   {[
-                    <AnimatedCard key="instant-responses" delay={0.6} hoverScale={1.02}>
+                    <AnimatedCard key="instant-responses" delay={0.25} hoverScale={1.02}>
                       <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-md text-left h-full">
-                        <FadeInSection delay={0.7} direction="left">
+                        <FadeInSection delay={0.27} direction="left">
                           <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                             <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                             </svg>
                           </div>
                         </FadeInSection>
-                        <FadeInSection delay={0.8} direction="left">
+                        <FadeInSection delay={0.29} direction="left">
                           <h3 className="text-lg font-semibold text-gray-900 mb-3">Instant Responses</h3>
                           <p className="text-gray-600 leading-relaxed">
                             Get immediate answers to your data privacy questions, available 24/7 to support your compliance efforts 
@@ -237,16 +236,16 @@ export default function HomePage() {
                       </div>
                     </AnimatedCard>,
                     
-                    <AnimatedCard key="expert-knowledge" delay={0.7} hoverScale={1.02}>
+                    <AnimatedCard key="expert-knowledge" delay={0.27} hoverScale={1.02}>
                       <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-md text-left h-full">
-                        <FadeInSection delay={0.8} direction="right">
+                        <FadeInSection delay={0.29} direction="right">
                           <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
                             <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                             </svg>
                           </div>
                         </FadeInSection>
-                        <FadeInSection delay={0.9} direction="right">
+                        <FadeInSection delay={0.31} direction="right">
                           <h3 className="text-lg font-semibold text-gray-900 mb-3">Expert Knowledge</h3>
                           <p className="text-gray-600 leading-relaxed">
                             Our AI is trained on the complete RA 10173 text, official guidelines, and best practices to provide 
@@ -258,10 +257,10 @@ export default function HomePage() {
                   ]}
                 </StaggeredList>
                 
-                <FadeInSection delay={1.0}>
-                  <AnimatedCard delay={1.1} hoverScale={1.01}>
+                <FadeInSection delay={0.3}>
+                  <AnimatedCard delay={0.35} hoverScale={1.01}>
                     <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 shadow-lg border-2 border-blue-200">
-                      <FadeInSection delay={1.2}>
+                      <FadeInSection delay={0.4}>
                         <div className="flex items-center justify-center mb-6">
                           <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
                             <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -276,13 +275,13 @@ export default function HomePage() {
                       </FadeInSection>
                       
                       {/* Modified section with side-by-side layout */}
-                      <FadeInSection delay={1.3}>
+                      <FadeInSection delay={0.45}>
                         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center gap-4">
-                          <FadeInSection delay={1.4} direction="left">
+                          <FadeInSection delay={0.5} direction="left">
                             <div className="bg-white/40 backdrop-blur-sm rounded-xl p-4">
                               <div className="text-sm text-gray-800">
                                 <p className="font-medium mb-2 text-center lg:text-left text-gray-900">Example questions you can ask:</p>
-                                <StaggeredList className="space-y-1 text-gray-700" staggerDelay={0.1}>
+                                <StaggeredList className="space-y-1 text-gray-700" staggerDelay={0.05}>
                                   {[
                                     <li key="question-1"> "What are the key requirements for data breach notification?"</li>,
                                     <li key="question-2"> "Do I need to register as a data controller?"</li>,
@@ -293,7 +292,7 @@ export default function HomePage() {
                             </div>
                           </FadeInSection>
                           
-                          <FadeInSection delay={1.6} direction="right">
+                          <FadeInSection delay={0.55} direction="right">
                             <div className="flex-shrink-0 text-center lg:text-right">
                               <button 
                                 onClick={openChat}
@@ -316,7 +315,7 @@ export default function HomePage() {
         </ScrollReveal>
 
         {/* Key Principles Section */}
-        <section className="py-20 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative border-t border-gray-100">
+        <section className="py-20 bg-gray-50 relative border-t border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">

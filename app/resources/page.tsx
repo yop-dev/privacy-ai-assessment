@@ -3,6 +3,7 @@
 import { useState, useContext } from 'react'
 import Link from 'next/link'
 import { useChatContext } from '@/components/ChatProvider'
+import PageTransition from '@/components/animations/PageTransition'
 
 interface Resource {
   id: string
@@ -214,21 +215,52 @@ export default function ResourcesPage() {
   const featuredResources = filteredResources.filter((r) => r.isNew)
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-primary-600 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6">
-              RA 10173 Resource Library
-            </h1>
-            <p className="text-xl text-primary-100 max-w-3xl mx-auto">
-              Comprehensive collection of templates, guides, and tools to help you achieve and maintain 
-              compliance with the Philippine Data Privacy Act of 2012.
-            </p>
+    <PageTransition>
+      <div className="min-h-screen bg-gray-50">
+        {/* Hero Section with Library Video Background */}
+        <section className="relative py-20 overflow-hidden">
+          {/* Library Video Background */}
+          <div className="absolute inset-0 w-full h-full">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/videos/library-background.mp4" type="video/mp4" />
+              <source src="/videos/library-background.webm" type="video/webm" />
+              {/* Fallback image for browsers that don't support video */}
+              <img 
+                src="/images/library-background.jpg"
+                alt="Library background" 
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            </video>
           </div>
-        </div>
-      </section>
+          
+          {/* Video overlay for better text readability */}
+          <div className="absolute inset-0 bg-black/50"></div>
+          <div className="absolute inset-0 bg-primary-900/30"></div>
+          
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <div className="inline-flex items-center bg-white/20 text-white backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+                Resource Library
+              </div>
+              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-6 drop-shadow-lg">
+                RA 10173 Resource Library
+              </h1>
+              <p className="text-xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
+                Comprehensive collection of templates, guides, and tools to help you achieve and maintain 
+                compliance with the Philippine Data Privacy Act of 2012.
+              </p>
+            </div>
+          </div>
+        </section>
 
       {/* Main Content */}
       <section className="py-16">
@@ -556,6 +588,7 @@ export default function ResourcesPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </PageTransition>
   )
 }

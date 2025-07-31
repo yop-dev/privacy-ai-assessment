@@ -152,9 +152,9 @@ export default function ResultCard({ result, actionSteps, answers }: ResultCardP
             <div className="w-full bg-gray-200 rounded-full h-4">
               <div 
                 className={`h-4 rounded-full transition-all duration-1000 ease-out ${
-                  result.status === 'compliant' ? 'bg-gradient-to-r from-green-400 to-green-600' :
-                  result.status === 'partially-compliant' ? 'bg-gradient-to-r from-yellow-400 to-yellow-600' : 
-                  'bg-gradient-to-r from-red-400 to-red-600'
+                  result.status === 'compliant' ? 'bg-green-500' :
+                  result.status === 'partially-compliant' ? 'bg-yellow-500' : 
+                  'bg-red-500'
                 }`}
                 style={{ width: `${(result.score / result.total) * 100}%` }}
               ></div>
@@ -303,7 +303,7 @@ export default function ResultCard({ result, actionSteps, answers }: ResultCardP
           )}
 
           {/* AI Chatbot Prompt */}
-          <div className="mt-8 bg-gradient-to-r from-blue-50 to-primary-50 rounded-2xl p-6 border border-blue-200">
+          <div className="mt-8 bg-blue-50 rounded-2xl p-6 border border-blue-200">
             <div className="flex items-center justify-between">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
