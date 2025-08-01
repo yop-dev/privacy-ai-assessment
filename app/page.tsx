@@ -70,7 +70,7 @@ export default function HomePage() {
                         <br />
                         <span className="text-gray-800">Compliance Checker</span>
                       </h1>
-                      <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+                      <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl mx-auto">
                         Quickly assess your business's compliance with <strong>RA 10173</strong> - the Philippine Data Privacy Act of 2012. 
                         Get instant insights and actionable recommendations.
                       </p>
